@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherAppMobile.Content.Page.DisplayWeatherResultsPage"
+             Title="Weather Results">
+    <Grid Margin="10" Padding="5" RowDefinitions="*,*">
+        <ScrollView VerticalOptions="FillAndExpand" Grid.Row="0">
+            <FlexLayout x:Name="WeatherDataCards"
+                        Direction="Row"
+                        AlignItems="Start"
+                        JustifyContent="SpaceEvenly"
+                        Wrap="Wrap"
+                        HorizontalOptions="Fill">
+            </FlexLayout>
+        </ScrollView>
+        <ScrollView VerticalOptions="FillAndExpand" Grid.Row="1">
+            <StackLayout>
+                <Label 
+                    x:Name="WeatherJsonData"
+                    HorizontalOptions="Fill"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,6 @@
+{
+  "combinedweather": {
+    "display": "Combined Weather",
+    "form": ["Location", "Longitude"]
+  }
+}

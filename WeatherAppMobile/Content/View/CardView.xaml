@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView 
+    x:Name="this"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WeatherAppMobile.Content.View.CardView">
+    <Frame CornerRadius="5" BorderColor="Black" Padding="1">
+        <StackLayout BindingContext="{x:Reference this}">
+            <Label 
+                x:Name="CardLabelTitleName" 
+                Text="{Binding CardLabelTitle}"/>
+
+            <Label 
+                x:Name="CardLabelSubTitleName" 
+                Text="{Binding CardLabelSubTitle}"/>
+
+            <Label 
+                x:Name="CardLabelTextName"
+                Text="{Binding CardLabelText}"/>
+
+            <Frame 
+                x:Name="CardChildFrameEl"
+                CornerRadius="5"
+                BorderColor="Black"
+                Padding="1">
+                <StackLayout x:Name="CardChildrenStackLayout" />
+            </Frame>
+        </StackLayout>
+    </Frame>
+</ContentView>

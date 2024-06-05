@@ -1,0 +1,28 @@
+{
+  "ApiSource": "WeatherAPI",
+  "CombinedWeatherTemperatureModel": {
+    "Kelvin": 294.25,
+    "FeelsLikeKelvin": 294.25,
+    "PressureMillibar": 1000,
+    "Humidity": 61
+  },
+  "CombinedWeatherCoordModel": {
+    "Latitude": 44.98,
+    "Longitude": -93.26
+  },
+  "CombinedWeatherConditionModel": {
+    "Description": "Partly cloudy",
+    "Icon": "//cdn.weatherapi.com/weather/64x64/day/116.png",
+    "Visibility": 9,
+    "WindSpeed": 13.6,
+    "WindDegree": 210,
+    "WindGust": 13.8,
+    "PrecipitationMm": 0.02,
+    "Clouds": 75
+  },
+  "CombinedWeatherLocationModel": {
+    "Name": "Minneapolis",
+    "Country": "United States of America",
+    "LocalTime": 1716579830
+  }
+}

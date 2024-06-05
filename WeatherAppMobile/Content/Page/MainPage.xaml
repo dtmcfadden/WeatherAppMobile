@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    x:Class="WeatherAppMobile.Content.Page.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModel="clr-namespace:WeatherAppMobile.ViewModel"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    ios:Page.UseSafeArea="True"
+    x:DataType="viewModel:MainViewModel">
+
+    <StackLayout Spacing="5">
+        <FlexLayout 
+            Direction="Row"
+            AlignItems="Start"
+            JustifyContent="SpaceEvenly"
+            Wrap="Wrap">
+            <Picker x:Name="WeatherSource" 
+                Title="Select Weather Source"
+                SelectedIndexChanged="OnWeatherSourceSelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Combined Weather</x:String>
+                        <x:String>Open Weather</x:String>
+                        <x:String>Weather API</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Picker x:Name="LocationType" 
+                Title="Location Type"
+                SelectedIndexChanged="OnLocationTypeSelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Location</x:String>
+                        <x:String>Latitude Longitude</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </FlexLayout>
+        <Grid x:Name="LocationGrid" RowDefinitions="*">
+            <Entry x:Name="LocationEntry" Placeholder="Location" Text="Minneapolis, MN"></Entry>
+        </Grid>
+        <Grid x:Name="LatLongGrid" RowDefinitions="*,*">
+            <Entry x:Name="LatitudeEntry" Placeholder="Latitude" Grid.Row="0"></Entry>
+            <Entry x:Name="LongitudeEntry" Placeholder="Longitude" Grid.Row="1"></Entry>
+        </Grid>
+        <Button x:Name="SubmitFormBtn"
+                Clicked="OnSubmitFormBtnClicked"
+                IsEnabled="{Binding IsNotBusy}"
+                Text="Get Weather"
+            />
+    </StackLayout>
+</ContentPage>
